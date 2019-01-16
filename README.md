@@ -24,6 +24,14 @@ This is more or less the thinning parameter for the Reported Claims process.
 The Cox-HMM is fitted on the Reported Claims process in order to estimate the parameters for the True Claims process.
 Then samples from the Unreported Claims process are generated to compute an estimate for the number of unreported claims.
 
+## Demo
+
+Check out the demo [here](https://github.com/tianle91/ibnr-coxhmm/blob/master/fitting.ipynb) to fit a synthetically generated Reported Claims process where we can recover the parameters.
+
+# Discussion
+
+1. Stepwise selection of shape parameters is slow
+2. Common reporting delay distribution
 
 # Reference
 
