@@ -5,16 +5,19 @@ Model counts of Incurred But Not Reported Claims (IBNR) with a stochastic rate m
 
 # Model
 
-Under certain assumptions on continuous rate intensity parameters, the discretized arrival process follows a Hidden Markov Model with Negative-Binomial marginals under the shape-scale parametrization as follows.
-
+Under certain assumptions on continuous rate intensity parameters, the discretized arrival process follows a Hidden Markov Model with Negative-Binomial marginals under the shape-scale parametrization as follows where `p = 1/(1+s)`.
 ```
-p = 1/(1+s)
 P(X=n|shape=m, scale=s) = binom(n+m-1, m-1) p^m (1-p)^n
 ```
 
-If each arrival is observed with probability `q`, the resulting process is also the same Hidden Markov Model with Negative-Binomial marginals, albeit with a scale multiplied by the thinning probability. 
-Instead of a scale parameter of `s`, as in earlier, we now have a scale parameter of `s*q` and all other parameters as well as the latent state remain unchanged.
+The latent state transitions are determined by the transition probability matrix `gamma`, so `P(C_{t+1}=j|C_t=i) = gamma[i,j]`. 
+Counts of arrivals are conditionally independent given the latent states, so `P(X_t=k|C_t=i) = P(X=k|shape=m_i, scale=s)` which are Negative-Binomial marginals as defined earlier.
 
+## Thinning
+
+If each arrival is observed with probability `q`, the resulting process is also the same Hidden Markov Model with Negative-Binomial marginals, albeit with a scale multiplied by the thinning probability.
+Instead of a scale parameter of `s`, as in earlier, we now have a scale parameter of `s*q` and all other parameters as well as the latent state remain unchanged.
+For example, if `Y_t` is the thinned version of `X_t` defined earlier with thinning parameters `q_t`, `P(Y_t=k|C_t=i) = P(X=k|shape=m_i, scale=s*q_t)`.
 
 ## Reported/Unreported Claims
 
