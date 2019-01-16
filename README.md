@@ -23,7 +23,7 @@ For example, if `Y_t` is the thinned version of `X_t` defined earlier with thinn
 
 We only observe reported claims.
 If the claims share a common reporting delay distribution (represented by random variable `U`) and occurs at time `t`, the probability of it being reported by `t_val > t` is `P(U < t_val-t)`. 
-This is more or less the thinning parameter for the Reported Claims process.
+This is more or less the thinning parameter (i.e. `q_t`) for the Reported Claims process.
 The Cox-HMM is fitted on the Reported Claims process in order to estimate the parameters for the True Claims process.
 Then samples from the Unreported Claims process are generated to compute an estimate for the number of unreported claims.
 
