@@ -29,7 +29,9 @@ Then samples from the Unreported Claims process are generated to compute an esti
 
 ## Demo
 
-Check out the demo [here](https://github.com/tianle91/ibnr-coxhmm/blob/master/fitting.ipynb) to fit a synthetically generated Reported Claims process where we can recover the parameters.
+
+
+Check out the demo [here](https://github.com/tianle91/ibnr-coxhmm/blob/master/demo/fitting.ipynb) to fit a synthetically generated Reported Claims process where we can recover the parameters.
 
 # Discussion
 
